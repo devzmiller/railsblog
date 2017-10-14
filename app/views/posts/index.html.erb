@@ -1,8 +1,7 @@
-<% @posts.each do |post| %>
-  <h2>
-    <%= post.title %>
-  </h2>
-  <p>
-    <%= post.body %>
-  </p>
-<% end %>
+<ul id="posts">
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to(post.title, post_path(post)) %>
+    </li>
+  <% end %>
+</ul>
