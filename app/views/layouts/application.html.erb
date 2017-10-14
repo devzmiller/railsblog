@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Railsblog</title>
+    <title>Devin's Blog</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1><%= link_to("Devin's Blog", posts_path) %></h1>
+    </header>
+    <main>
+      <%= yield %>
+      
+    </main>
   </body>
 </html>

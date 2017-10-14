@@ -1,0 +1,9 @@
+<%= button_to "Create a Post", { action: "new" }, method: :get %>
+
+<ul id="posts">
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to(post.title, post_path(post)) %>
+    </li>
+  <% end %>
+</ul>
