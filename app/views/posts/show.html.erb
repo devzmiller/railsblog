@@ -4,3 +4,6 @@
 <p>
   <%= @post.body %>
 </p>
+
+<%= button_to "Delete Post", { action: "destroy", id: @post.id },
+                                method: :delete %>

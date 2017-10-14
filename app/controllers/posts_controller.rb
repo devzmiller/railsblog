@@ -21,4 +21,9 @@ class PostsController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    Post.destroy(params[:id])
+    redirect_to posts_path
+  end
 end
