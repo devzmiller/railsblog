@@ -9,7 +9,12 @@
   </head>
 
   <body>
-    <h1><%= link_to("Devin's Blog", posts_path) %></h1>
-    <%= yield %>
+    <header>
+      <h1><%= link_to("Devin's Blog", posts_path) %></h1>
+    </header>
+    <main>
+      <%= yield %>
+      
+    </main>
   </body>
 </html>

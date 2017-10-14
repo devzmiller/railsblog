@@ -1,4 +1,5 @@
-<%= link_to("Create a post", new_post_path) %>
+<%= button_to "Create a Post", { action: "new" }, method: :get %>
+
 <ul id="posts">
   <% @posts.each do |post| %>
     <li>

@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+header {
+  width: 100%;
+  background-color: #659b36;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  margin-left: 40px;
+}
+
+h1 a {
+  color: #fcfaf4;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  border: 1px dashed grey;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #659b36;
+}
+
+input[type=text] {
+  padding: 10px;
+  width: 20%;
+  margin: 10px;
+}
+
+input[type=submit] {
+  padding: 10px;
+  background-color: #ddf4be;
+  border: 1px solid grey;
+}
