@@ -1,0 +1,87 @@
+$dark-green: #659b36;
+$header-links: #fcfaf4;
+$main-bg: #ddf4be;
+$body-black: #444;
+
+body {
+  max-width: 100%;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  color: $body-black;
+}
+
+header {
+  max-width: 90%;
+  height: 75px;
+  background-color: $dark-green;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  margin-left: 40px;
+  float: left;
+  a {
+  color: $header-links;
+  text-decoration: none;
+  }
+}
+
+nav {
+  a {
+  color: $header-links;
+  font-weight: bold;
+  text-decoration: none;
+  }
+  ul {
+    float: right;
+    list-style-type: none;
+  }
+  li {
+    margin: 20px;
+    float: right;
+  }
+  input[type=submit] {
+    background: inherit;
+    margin: 0;
+    padding: 0;
+    color: $header-links;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0;
+  }
+  input[type=submit]:focus {
+    outline: 0;
+  }
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  border: 1px dashed grey;
+  padding: 20px;
+  a {
+    text-decoration: none;
+    color: $dark-green;
+  }
+}
+
+input[type=text], input[type=email], input[type=password] {
+  padding: 10px;
+  width: 20%;
+  margin: 10px;
+}
+
+input[type=submit] {
+  padding: 10px;
+  background-color: $main-bg;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  float: left;
+  input[type=submit]:focus {
+    outline: 0;
+  }
+}
