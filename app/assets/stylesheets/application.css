@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  width: 100%;
+}
+
 header {
   width: 100%;
   background-color: #659b36;
@@ -30,6 +35,10 @@ h1 a {
   color: #fcfaf4;
 }
 
+nav a {
+  color: #fcfaf4;
+}
+
 main {
   width: 80%;
   margin: auto;
@@ -42,7 +51,7 @@ a {
   color: #659b36;
 }
 
-input[type=text] {
+input[type=text], input[type=email], input[type=password] {
   padding: 10px;
   width: 20%;
   margin: 10px;
