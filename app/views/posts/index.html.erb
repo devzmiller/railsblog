@@ -1,4 +1,6 @@
-<%= button_to "Create a Post", { action: "new" }, method: :get %>
+<% if session[:user_id] %>
+  <%= button_to "Create a Post", { action: "new" }, method: :get %>
+<% end %>
 
 <ul id="posts">
   <% @posts.each do |post| %>

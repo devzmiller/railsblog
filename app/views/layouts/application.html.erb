@@ -11,10 +11,20 @@
   <body>
     <header>
       <h1><%= link_to("Devin's Blog", posts_path) %></h1>
+      <nav>
+        <ul>
+          <% if session[:user_id] %>
+          <%= button_to "Logout", { action: "destroy", controller: "sessions", id: session[:user_id] }, method: :delete %>
+          <% else %>
+            <li><%= link_to("Create an Account", new_user_path) %></li>
+            <li><%= link_to("Login", new_session_path) %></li>
+          <% end %>
+        </ul>
+      </nav>
     </header>
     <main>
       <%= yield %>
-      
+
     </main>
   </body>
 </html>

@@ -8,33 +8,55 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if session[:user_id]
+      @post = Post.new
+    else
+      redirect_to new_session_path
+    end
   end
 
   def create
-    params.permit!
-    @post = Post.new(params[:post])
-    if @post.save
-      redirect_to post_path(@post)
+    if session[:user_id]
+      params.permit!
+      @post = Post.new(params[:post])
+      @user = User.find(session[:user_id])
+      @post.user = @user
+      if @post.save
+        redirect_to post_path(@post)
+      else
+        @errors = @post.errors.full_messages
+        render 'new'
+      end
     else
-      @errors = @post.errors.full_messages
-      render 'new'
+      redirect_to new_session_path
     end
   end
 
   def destroy
-    Post.destroy(params[:id])
-    redirect_to posts_path
+    post = Post.find(params[:id])
+    if post.user_id == session[:user_id]
+      post.destroy
+      redirect_to posts_path
+    else
+      redirect_to new_session_path
+    end
   end
 
   def edit
     @post = Post.find(params[:id])
+    if @post.user_id != session[:user_id]
+      redirect_to new_session_path
+    end
   end
 
   def update
     @post = Post.find(params[:id])
-    params.permit!
-    @post.update(params[:post])
-    redirect_to post_path(@post)
+    if @post.user_id = session[:user_id]
+      params.permit!
+      @post.update(params[:post])
+      redirect_to post_path(@post)
+    else
+      redirect_to new_session_path
+    end
   end
 end
