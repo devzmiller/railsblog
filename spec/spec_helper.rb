@@ -20,16 +20,16 @@ RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
-  config.include Rack::Test::Methods
+  # config.include Rack::Test::Methods
 
-  config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
-    DatabaseCleaner.strategy = :transaction
-  end
+  # config.before(:suite) do
+  #   DatabaseCleaner.clean_with(:truncation)
+  #   DatabaseCleaner.strategy = :transaction
+  # end
+  #
+  # config.before(:each) { DatabaseCleaner.start }
+  # config.after(:each)  { DatabaseCleaner.clean }
 
-  config.before(:each) { DatabaseCleaner.start }
-  config.after(:each)  { DatabaseCleaner.clean }
-  
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
